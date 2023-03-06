@@ -1,0 +1,20 @@
+//a script to take an array that includes primitive values and arrays and returns a flattened array.
+//This version is only for 2D arrays. I would use recursion to go deeper.
+<script>
+   function flattener(twoDArray) {  
+      let oneDArray=[];
+      for (let i=0; i<twoDArray.length; i++) {
+         if (Array.isArray(twoDArray[i])==false) {
+            oneDArray.push(twoDArray[i]);
+         }
+         else {
+            for(let j=0; j<twoDArray[i].length; j++) {
+               oneDArray.push(twoDArray[i][j]);
+         }
+      }
+   }
+   return oneDArray;
+}
+const flattenedArray=flattener([1,2,[3,4],5]);
+console.log(flattenedArray);
+</script>
